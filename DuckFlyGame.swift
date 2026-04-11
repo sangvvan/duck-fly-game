@@ -14,13 +14,16 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            // Background
-            Color.cyan
+            // Sky gradient background
+            ColorTheme.skyGradient()
                 .ignoresSafeArea()
 
             // Game canvas
             GameView(gameManager: gameManager)
                 .ignoresSafeArea()
+        }
+        .onAppear {
+            ColorTheme.verifyAccessibility()
         }
     }
 }
@@ -129,12 +132,12 @@ struct GameView: View {
                 DuckView()
                     .position(gameManager.duckPosition)
 
-                // Score
+                // Score display with accessible text color
                 VStack {
                     HStack {
                         Text("Score: \(gameManager.score)")
-                            .font(.title)
-                            .foregroundColor(.white)
+                            .font(.system(size: 32, weight: .bold))
+                            .foregroundColor(ColorTheme.textPrimary)
                             .padding()
                         Spacer()
                     }
