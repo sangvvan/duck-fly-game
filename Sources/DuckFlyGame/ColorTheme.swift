@@ -78,13 +78,7 @@ struct ColorTheme {
         )
     }
 
-    /// Shadow style for cards and UI elements
-    static let shadowStyle = Shadow(
-        color: .black.opacity(0.2),
-        radius: 3,
-        x: 0,
-        y: 2
-    )
+    // Shadow is applied using .shadow() modifier directly in views
 }
 
 // MARK: - Color Accessibility Tests
