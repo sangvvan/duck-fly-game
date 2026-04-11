@@ -57,10 +57,15 @@ struct StartMenuView: View {
                                     : ColorTheme.textPrimary
                             )
                             .onTapGesture {
+                                HapticManager.shared.selection()
                                 withAnimation(.easeInOut(duration: 0.2)) {
                                     selectedDifficulty = difficulty
                                 }
                             }
+                            .accessibilityElement(
+                                label: "\(difficulty.label) difficulty",
+                                hint: difficulty.description
+                            )
                         }
                     }
                 }
@@ -70,6 +75,7 @@ struct StartMenuView: View {
 
                 // Play button
                 Button(action: {
+                    HapticManager.shared.impact(.medium)
                     withAnimation(.easeInOut(duration: 0.3)) {
                         gameState = .playing
                     }
@@ -83,6 +89,10 @@ struct StartMenuView: View {
                         .cornerRadius(12)
                 }
                 .padding(.horizontal)
+                .accessibilityElement(
+                    label: "Play Game",
+                    hint: "Start playing Duck Fly"
+                )
 
                 Spacer()
                     .frame(height: 40)

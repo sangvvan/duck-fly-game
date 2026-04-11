@@ -20,11 +20,15 @@ struct ContentView: View {
             ColorTheme.skyGradient()
                 .ignoresSafeArea()
 
+            // Animated background scenery
+            BackgroundScenery()
+                .ignoresSafeArea()
+
             // Content based on game state
             switch gameState {
             case .menu:
                 StartMenuView(gameState: $gameState, selectedDifficulty: $selectedDifficulty)
-                    .transition(.opacity)
+                    .transition(.opacity.combined(with: .scale(scale: 0.95)))
 
             case .playing:
                 GameView(gameManager: gameManager)
@@ -33,22 +37,26 @@ struct ContentView: View {
 
             case .gameOver:
                 GameOverView(score: gameManager.score) {
+                    HapticManager.shared.selection()
                     gameState = .menu
                     gameManager.resetGame()
                 }
-                .transition(.opacity)
+                .transition(.opacity.combined(with: .scale(scale: 1.05)))
             }
         }
         .onAppear {
             ColorTheme.verifyAccessibility()
+            HapticManager.shared.notification(.Success)
         }
         .onChange(of: gameState) { newState in
             if newState == .playing {
                 gameManager.startGame(difficulty: selectedDifficulty)
+                HapticManager.shared.impact(.light)
             }
         }
         .onChange(of: gameManager.gameActive) { isActive in
             if !isActive && gameState == .playing {
+                HapticManager.shared.notification(.Warning)
                 gameState = .gameOver
             }
         }
@@ -61,11 +69,14 @@ class GameManager: ObservableObject {
     @Published var score = 0
     @Published var gameActive = false
     @Published var comboCount = 0
+    @Published var gameTime: TimeInterval = 0
 
     private var displayLink: CADisplayLink?
     private var difficulty: GameDifficulty = .normal
     private var lastCollectionTime: TimeInterval = 0
-    private let comboTimeout: TimeInterval = 1.5  // Time to maintain combo
+    private var gameStartTime: TimeInterval = 0
+    private let comboTimeout: TimeInterval = 1.5
+    private let gameTimeLimit: TimeInterval = 60  // 60 second game
 
     // Game constants
     private let baseGameSpeed: CGFloat = 5
@@ -82,9 +93,11 @@ class GameManager: ObservableObject {
         self.difficulty = difficulty
         score = 0
         comboCount = 0
+        gameTime = 0
         duckPosition = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
         foodItems.removeAll()
         gameActive = true
+        gameStartTime = Date().timeIntervalSince1970
         generateFood()
         startGameLoop()
     }
@@ -93,6 +106,7 @@ class GameManager: ObservableObject {
         stopGameLoop()
         score = 0
         comboCount = 0
+        gameTime = 0
         foodItems.removeAll()
         gameActive = false
     }
@@ -113,18 +127,26 @@ class GameManager: ObservableObject {
     @objc private func update() {
         guard gameActive else { return }
 
-        // Update food items and remove off-screen items (reverse iteration to avoid index issues)
+        // Update game time
+        gameTime = Date().timeIntervalSince1970 - gameStartTime
+
+        // Check time limit
+        if gameTime >= gameTimeLimit {
+            gameActive = false
+            return
+        }
+
+        // Update food items and remove off-screen items
         for i in stride(from: foodItems.count - 1, through: 0, by: -1) {
             let speedAdjusted = baseGameSpeed * foodItems[i].type.speedModifier * difficulty.foodSpeedMultiplier
             foodItems[i].position.y += speedAdjusted
 
-            // Remove food that went off screen
             if foodItems[i].position.y > screenHeight {
                 foodItems.remove(at: i)
             }
         }
 
-        // Check collisions with duck (reverse iteration for safe removal)
+        // Check collisions
         for i in stride(from: foodItems.count - 1, through: 0, by: -1) {
             let distance = duckPosition.distance(to: foodItems[i].position)
             if distance < collisionRadius {
@@ -140,6 +162,9 @@ class GameManager: ObservableObject {
                 }
                 lastCollectionTime = currentTime
 
+                // Haptic feedback
+                HapticManager.shared.impact(.light)
+
                 foodItems.remove(at: i)
             }
         }
@@ -154,15 +179,10 @@ class GameManager: ObservableObject {
         while foodItems.count < maxFoodOnScreen {
             generateFood()
         }
-
-        // Simple game over condition: time limit (30 seconds for demo)
-        // In Phase 3, this can be replaced with lives system or other mechanics
     }
 
     private func generateFood() {
         let randomX = CGFloat.random(in: foodEndSpacing...(screenWidth - foodEndSpacing))
-
-        // Select food type based on spawn weights
         let foodType = selectRandomFoodType()
 
         let food = FoodItem(
@@ -217,7 +237,7 @@ struct GameView: View {
                 DuckView()
                     .position(gameManager.duckPosition)
 
-                // Point popups
+                // Particle effects
                 ForEach(popupManager.popups) { popup in
                     PointPopupView(popup: popup)
                         .position(popup.position)
@@ -232,6 +252,24 @@ struct GameView: View {
                     )
 
                     Spacer()
+
+                    // Timer at bottom
+                    HStack {
+                        Spacer()
+                        VStack(spacing: 4) {
+                            Image(systemName: "clock.fill")
+                                .font(.system(size: 12))
+                            Text(formatTime(gameManager.gameTime))
+                                .font(.system(size: 14, weight: .semibold))
+                        }
+                        .foregroundColor(ColorTheme.textPrimary)
+                        .padding(12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(ColorTheme.lightBackground)
+                        )
+                        .padding()
+                    }
                 }
                 .zIndex(10)
             }
@@ -241,7 +279,17 @@ struct GameView: View {
                     gameManager.moveDuck(to: location)
                 }
             }
+            .accessibilityElement(
+                label: "Duck Fly Game",
+                hint: "Move duck to collect falling food"
+            )
         }
+    }
+
+    private func formatTime(_ timeInterval: TimeInterval) -> String {
+        let remaining = max(0, 60 - timeInterval)
+        let seconds = Int(remaining) % 60
+        return String(format: "%02d", seconds)
     }
 }
 
