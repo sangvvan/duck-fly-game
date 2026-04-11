@@ -32,11 +32,25 @@ class GameManager: ObservableObject {
     @Published var gameActive = true
 
     private var displayLink: CADisplayLink?
+
+    // Game constants
     private let gameSpeed: CGFloat = 5
+    private let collisionRadius: CGFloat = 40
+    private let maxFoodOnScreen = 3
+    private let foodStartY: CGFloat = -30
+    private let foodEndSpacing: CGFloat = 50
+
+    // Cached screen dimensions
+    private let screenWidth = UIScreen.main.bounds.width
+    private let screenHeight = UIScreen.main.bounds.height
 
     init() {
         generateFood()
         startGameLoop()
+    }
+
+    deinit {
+        stopGameLoop()
     }
 
     func startGameLoop() {
@@ -55,40 +69,35 @@ class GameManager: ObservableObject {
     @objc private func update() {
         guard gameActive else { return }
 
-        // Update food items
-        for i in 0..<foodItems.count {
+        // Update food items and remove off-screen items (reverse iteration to avoid index issues)
+        for i in stride(from: foodItems.count - 1, through: 0, by: -1) {
             foodItems[i].position.y += gameSpeed
 
             // Remove food that went off screen
-            if foodItems[i].position.y > UIScreen.main.bounds.height {
+            if foodItems[i].position.y > screenHeight {
                 foodItems.remove(at: i)
             }
         }
 
-        // Check collisions with duck
-        for i in 0..<foodItems.count {
+        // Check collisions with duck (reverse iteration for safe removal)
+        for i in stride(from: foodItems.count - 1, through: 0, by: -1) {
             let distance = duckPosition.distance(to: foodItems[i].position)
-            if distance < 40 {
+            if distance < collisionRadius {
                 score += 10
                 foodItems.remove(at: i)
-
-                if foodItems.count < 3 {
-                    generateFood()
-                }
             }
         }
 
-        // Generate new food occasionally
-        if foodItems.isEmpty {
+        // Maintain minimum food on screen
+        while foodItems.count < maxFoodOnScreen {
             generateFood()
         }
     }
 
     private func generateFood() {
-        let width = UIScreen.main.bounds.width
-        let randomX = CGFloat.random(in: 50...(width - 50))
+        let randomX = CGFloat.random(in: foodEndSpacing...(screenWidth - foodEndSpacing))
         let food = FoodItem(
-            position: CGPoint(x: randomX, y: -30),
+            position: CGPoint(x: randomX, y: foodStartY),
             id: UUID()
         )
         foodItems.append(food)
