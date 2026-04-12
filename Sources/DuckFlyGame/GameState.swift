@@ -33,7 +33,11 @@ enum GameDifficulty: String, CaseIterable {
 
 /// Overall game state
 enum GameScreenState {
+    case mainMenu
     case menu
     case playing
     case gameOver
+    case multiplayerSetup
+    case multiplayerPlaying
+    case multiplayerGameOver
 }

@@ -1,4 +1,7 @@
 import SwiftUI
+#if os(iOS)
+import UIKit
+#endif
 
 /// Accessibility support and features
 struct AccessibilityModifier: ViewModifier {
@@ -29,6 +32,7 @@ extension View {
 class HapticManager {
     static let shared = HapticManager()
 
+    #if os(iOS)
     func impact(_ style: UIImpactFeedbackGenerator.FeedbackStyle = .medium) {
         let generator = UIImpactFeedbackGenerator(style: style)
         generator.impactOccurred()
@@ -39,10 +43,15 @@ class HapticManager {
         generator.selectionChanged()
     }
 
-    func notification(_ type: UINotificationFeedbackGenerator.FeedbackType = .Success) {
+    func notification(_ type: UINotificationFeedbackGenerator.FeedbackType = .success) {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(type)
     }
+    #else
+    func impact(_ style: Any = "medium") {}
+    func selection() {}
+    func notification(_ type: Any = "success") {}
+    #endif
 }
 
 /// Accessibility-enhanced button
@@ -121,7 +130,7 @@ struct AccessibleText: View {
                 .foregroundColor(ColorTheme.textPrimary)
 
             AccessibleButton(title: "Play Button", action: {
-                HapticManager.shared.notification(.Success)
+                HapticManager.shared.notification(.success)
             }, style: .primary)
             .padding(.horizontal)
 

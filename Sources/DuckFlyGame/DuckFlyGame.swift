@@ -10,21 +10,54 @@ struct DuckFlyGameApp: App {
 }
 
 struct ContentView: View {
+    @State private var gameState: GameScreenState = .mainMenu
+    @StateObject var flowCoordinator = MultiplayerFlowCoordinator()
+
+    var body: some View {
+        switch gameState {
+        case .mainMenu:
+            MainMenuView(gameState: $gameState)
+
+        case .menu, .playing, .gameOver:
+            SoloGameView(gameState: $gameState)
+
+        case .multiplayerSetup:
+            MultiplayerSetupView(
+                flowCoordinator: flowCoordinator,
+                gameState: $gameState
+            )
+
+        case .multiplayerPlaying:
+            if let gameManager = flowCoordinator.gameManager {
+                MultiplayerGameView(gameManager: gameManager)
+                    .ignoresSafeArea()
+                    .onReceive(Timer.publish(every: 0.016, on: .main, in: .common).autoconnect()) { _ in
+                        if gameManager.isGameOver {
+                            flowCoordinator.finishGame()
+                            gameState = .multiplayerGameOver
+                        }
+                    }
+            }
+
+        case .multiplayerGameOver:
+            MultiplayerGameOverView(flowCoordinator: flowCoordinator)
+        }
+    }
+}
+
+struct SoloGameView: View {
     @StateObject var gameManager = GameManager()
-    @State private var gameState: GameScreenState = .menu
+    @Binding var gameState: GameScreenState
     @State private var selectedDifficulty: GameDifficulty = .normal
 
     var body: some View {
         ZStack {
-            // Sky gradient background
             ColorTheme.skyGradient()
                 .ignoresSafeArea()
 
-            // Animated background scenery
             BackgroundScenery()
                 .ignoresSafeArea()
 
-            // Content based on game state
             switch gameState {
             case .menu:
                 StartMenuView(gameState: $gameState, selectedDifficulty: $selectedDifficulty)
@@ -42,11 +75,14 @@ struct ContentView: View {
                     gameManager.resetGame()
                 }
                 .transition(.opacity.combined(with: .scale(scale: 1.05)))
+
+            default:
+                StartMenuView(gameState: $gameState, selectedDifficulty: $selectedDifficulty)
             }
         }
         .onAppear {
             ColorTheme.verifyAccessibility()
-            HapticManager.shared.notification(.Success)
+            HapticManager.shared.notification(.success)
         }
         .onChange(of: gameState) { newState in
             if newState == .playing {
@@ -56,14 +92,134 @@ struct ContentView: View {
         }
         .onChange(of: gameManager.gameActive) { isActive in
             if !isActive && gameState == .playing {
-                HapticManager.shared.notification(.Warning)
+                HapticManager.shared.notification(.warning)
                 gameState = .gameOver
             }
         }
     }
 }
 
-class GameManager: ObservableObject {
+struct MultiplayerSetupView: View {
+    @ObservedObject var flowCoordinator: MultiplayerFlowCoordinator
+    @Binding var gameState: GameScreenState
+
+    var body: some View {
+        ZStack {
+            ColorTheme.skyGradient()
+                .ignoresSafeArea()
+
+            switch flowCoordinator.currentStep {
+            case .modeSelection:
+                ModeSelectionView(flowCoordinator: flowCoordinator)
+
+            case .difficultySelection:
+                DifficultySelectionView(
+                    selectedDifficulty: $flowCoordinator.selectedDifficulty,
+                    onConfirm: { flowCoordinator.currentStep = .characterSelection }
+                )
+
+            case .characterSelection:
+                CharacterSelectionView(flowCoordinator: flowCoordinator)
+
+            case .teamLobby:
+                TeamLobbyView(flowCoordinator: flowCoordinator)
+                    .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
+                        if flowCoordinator.currentStep == .playing {
+                            gameState = .multiplayerPlaying
+                        }
+                    }
+
+            default:
+                ModeSelectionView(flowCoordinator: flowCoordinator)
+            }
+        }
+    }
+}
+
+struct DifficultySelectionView: View {
+    @Binding var selectedDifficulty: GameDifficulty
+    let onConfirm: () -> Void
+
+    var body: some View {
+        ZStack {
+            ColorTheme.skyGradient()
+                .ignoresSafeArea()
+
+            VStack(spacing: 24) {
+                Text("Select Difficulty")
+                    .font(.system(size: 32, weight: .bold))
+                    .foregroundColor(ColorTheme.textPrimary)
+                    .padding(.top, 32)
+
+                VStack(spacing: 12) {
+                    ForEach(GameDifficulty.allCases, id: \.self) { difficulty in
+                        DifficultyButton(
+                            difficulty: difficulty,
+                            isSelected: selectedDifficulty == difficulty,
+                            action: { selectedDifficulty = difficulty }
+                        )
+                    }
+                }
+                .padding(.horizontal, 24)
+
+                Spacer()
+
+                Button(action: onConfirm) {
+                    Text("Continue")
+                        .font(.system(size: 18, weight: .bold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .foregroundColor(.white)
+                        .background(ColorTheme.primaryAction)
+                        .cornerRadius(12)
+                }
+                .padding(.horizontal, 24)
+                .padding(.bottom, 32)
+            }
+        }
+    }
+}
+
+struct DifficultyButton: View {
+    let difficulty: GameDifficulty
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        VStack(spacing: 8) {
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(difficulty.label)
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(ColorTheme.textPrimary)
+
+                    Text(difficulty.description)
+                        .font(.system(size: 14))
+                        .foregroundColor(ColorTheme.textSecondary)
+                }
+
+                Spacer()
+
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 24))
+                        .foregroundColor(ColorTheme.success)
+                }
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity)
+            .background(ColorTheme.lightBackground)
+            .cornerRadius(12)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(isSelected ? ColorTheme.success : ColorTheme.veryLightBackground, lineWidth: 2)
+            )
+        }
+        .onTapGesture(perform: action)
+    }
+}
+
+class GameManager: NSObject, ObservableObject {
     @Published var duckPosition = CGPoint(x: 100, y: 200)
     @Published var foodItems: [FoodItem] = []
     @Published var score = 0
@@ -274,11 +430,9 @@ struct GameView: View {
                 .zIndex(10)
             }
             .contentShape(Rectangle())
-            .onContinuousHover { phase in
-                if case .active(let location) = phase {
-                    gameManager.moveDuck(to: location)
-                }
-            }
+            .modifier(ContinuousHoverModifier { location in
+                gameManager.moveDuck(to: location)
+            })
             .accessibilityElement(
                 label: "Duck Fly Game",
                 hint: "Move duck to collect falling food"
@@ -303,7 +457,27 @@ struct FoodView: View {
     let foodType: FoodType
 
     var body: some View {
-        FoodItemView(type: foodType)
+        if #available(iOS 16.0, *) {
+            FoodItemView(type: foodType)
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+}
+
+private struct ContinuousHoverModifier: ViewModifier {
+    let onHover: (CGPoint) -> Void
+
+    func body(content: Content) -> some View {
+        if #available(iOS 17.0, *) {
+            content.onContinuousHover { phase in
+                if case .active(let location) = phase {
+                    onHover(location)
+                }
+            }
+        } else {
+            content
+        }
     }
 }
 

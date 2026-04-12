@@ -50,9 +50,23 @@ enum FoodType {
         case .seeds: return ColorTheme.seedsBrown
         }
     }
+
+    /// Random food type selection
+    static func random() -> FoodType {
+        let rand = Double.random(in: 0...1)
+
+        if rand < FoodType.corn.spawnWeight {
+            return .corn
+        } else if rand < FoodType.corn.spawnWeight + FoodType.berries.spawnWeight {
+            return .berries
+        } else {
+            return .seeds
+        }
+    }
 }
 
 /// Visual representation of food items
+@available(iOS 16.0, *)
 struct FoodItemView: View {
     let type: FoodType
     @State private var rotation: Double = 0
@@ -91,9 +105,9 @@ struct FoodItemView: View {
             // Corn husk
             UnevenRoundedRectangle(
                 topLeadingRadius: type.size * 0.2,
-                topTrailingRadius: type.size * 0.15,
                 bottomLeadingRadius: type.size * 0.1,
-                bottomTrailingRadius: type.size * 0.1
+                bottomTrailingRadius: type.size * 0.1,
+                topTrailingRadius: type.size * 0.15
             )
             .fill(ColorTheme.cornHusk)
             .frame(width: type.size * 0.3, height: type.size * 0.5)
@@ -148,8 +162,8 @@ struct FoodItemView: View {
             // Seed texture lines
             ForEach(0..<2, id: \.self) { index in
                 Path { path in
-                    path.move(to: CGPoint(x: -type.size * 0.15, y: CGFloat(index - 0.5) * type.size * 0.2))
-                    path.addLine(to: CGPoint(x: type.size * 0.15, y: CGFloat(index - 0.5) * type.size * 0.2))
+                    path.move(to: CGPoint(x: -type.size * 0.15, y: (CGFloat(index) - 0.5) * type.size * 0.2))
+                    path.addLine(to: CGPoint(x: type.size * 0.15, y: (CGFloat(index) - 0.5) * type.size * 0.2))
                 }
                 .stroke(ColorTheme.seedsAccent, lineWidth: type.size * 0.02)
             }
@@ -169,7 +183,11 @@ struct FoodItemView: View {
 
             HStack(spacing: 30) {
                 VStack(spacing: 10) {
-                    FoodItemView(type: .corn)
+                    if #available(iOS 16.0, *) {
+                        FoodItemView(type: .corn)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     VStack(spacing: 4) {
                         Text("Corn")
                             .font(.caption)
@@ -181,7 +199,11 @@ struct FoodItemView: View {
                 }
 
                 VStack(spacing: 10) {
-                    FoodItemView(type: .berries)
+                    if #available(iOS 16.0, *) {
+                        FoodItemView(type: .berries)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     VStack(spacing: 4) {
                         Text("Berries")
                             .font(.caption)
@@ -193,7 +215,11 @@ struct FoodItemView: View {
                 }
 
                 VStack(spacing: 10) {
-                    FoodItemView(type: .seeds)
+                    if #available(iOS 16.0, *) {
+                        FoodItemView(type: .seeds)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     VStack(spacing: 4) {
                         Text("Seeds")
                             .font(.caption)

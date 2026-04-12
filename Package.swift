@@ -6,14 +6,8 @@ let package = Package(
     platforms: [
         .iOS(.v15)
     ],
-    products: [
-        .library(
-            name: "DuckFlyGame",
-            targets: ["DuckFlyGame"]
-        )
-    ],
     targets: [
-        .target(
+        .executableTarget(
             name: "DuckFlyGame",
             dependencies: []
         )
