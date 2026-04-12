@@ -3,6 +3,7 @@ import SwiftUI
 /// Main multiplayer game view with split-screen gameplay
 struct MultiplayerGameView: View {
     @ObservedObject var gameManager: MultiplayerGameManager
+    @StateObject private var particleEffects = ParticleEffectSystem()
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
     private var zoneHeight: CGFloat {
@@ -15,6 +16,21 @@ struct MultiplayerGameView: View {
 
     var body: some View {
         ZStack {
+            // Particle effects layer
+            ForEach(particleEffects.activeEffects) { effect in
+                ParticleBurstView(effect: effect)
+            }
+
+            // Team combo banner
+            if gameManager.comboEventTriggered, let team = gameManager.lastComboTeam {
+                VStack {
+                    TeamSynergyBonusView(team: team)
+                        .transition(.scale.combined(with: .opacity))
+                    Spacer()
+                }
+                .padding()
+            }
+
             // Game zones
             VStack(spacing: 0) {
                 ForEach(Array(gameManager.teams.flatMap { $0.members }.enumerated()), id: \.element.id) { index, player in
@@ -51,6 +67,17 @@ struct MultiplayerGameView: View {
                         )
                     }
                 }
+            }
+        }
+        .onChange(of: gameManager.comboEventTriggered) { triggered in
+            if triggered, let team = gameManager.lastComboTeam {
+                // Trigger particle effect at center of screen
+                let centerX = zoneWidth / 2
+                let centerY = UIScreen.main.bounds.height / 2
+                particleEffects.addTeamComboEffect(
+                    at: CGPoint(x: centerX, y: centerY),
+                    teamColor: TeamColorTheme.teamColor(team)
+                )
             }
         }
     }

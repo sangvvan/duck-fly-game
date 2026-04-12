@@ -10,8 +10,11 @@ class MultiplayerGameManager: ObservableObject {
     @Published var gameTime: Double = 60.0
     @Published var remainingTime: Double = 60.0
     @Published var difficulty: GameDifficulty = .normal
+    @Published var lastComboTeam: TeamIdentifier? = nil
+    @Published var comboEventTriggered: Bool = false
 
     private var gameTimer: Timer?
+    private var teamSynergies: [TeamIdentifier: TeamSynergy] = [:]
 
     init(gameMode: GameMode, difficulty: GameDifficulty = .normal) {
         self.gameMode = gameMode
@@ -22,6 +25,12 @@ class MultiplayerGameManager: ObservableObject {
         let teamRed = TeamState(teamIdentifier: .red)
         let teamBlue = TeamState(teamIdentifier: .blue)
         self.teams = [teamRed, teamBlue]
+
+        // Initialize team synergy trackers
+        self.teamSynergies = [
+            .red: TeamSynergy(teamIdentifier: .red),
+            .blue: TeamSynergy(teamIdentifier: .blue)
+        ]
     }
 
     func addPlayer(_ player: PlayerState) {
@@ -81,6 +90,16 @@ class MultiplayerGameManager: ObservableObject {
                         if duckHitbox.intersects(food.hitbox()) {
                             player.addScore(food.type.points)
                             foodToRemove.append(food.id)
+
+                            // Record catch for team synergy
+                            if let synergy = teamSynergies[player.team] {
+                                synergy.recordCatch()
+
+                                // Check if synergy bonus was triggered
+                                if synergy.isBonusActive {
+                                    triggerTeamSynergyBonus(for: player.team)
+                                }
+                            }
                         }
                     }
                 }
@@ -159,9 +178,29 @@ class MultiplayerGameManager: ObservableObject {
 
     func resetForNewGame() {
         teams.forEach { $0.resetForNewGame() }
+        teamSynergies.forEach { $0.value.resetCombo() }
         gameState = .setup
         remainingTime = gameTime
         gameSimulation.foodItems.removeAll()
+    }
+
+    private func triggerTeamSynergyBonus(for team: TeamIdentifier) {
+        let bonusPoints = 50
+        lastComboTeam = team
+        comboEventTriggered = true
+
+        // Apply bonus to all team members
+        if let teamState = teams.first(where: { $0.teamIdentifier == team }) {
+            for player in teamState.members {
+                player.score += bonusPoints
+            }
+            teamState.updateTotalScore()
+        }
+
+        // Reset flag after a short delay for UI purposes
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.comboEventTriggered = false
+        }
     }
 
     var winningTeam: TeamState? {

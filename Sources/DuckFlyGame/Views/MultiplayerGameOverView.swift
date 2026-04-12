@@ -17,19 +17,15 @@ struct MultiplayerGameOverView: View {
             ColorTheme.skyGradient()
                 .ignoresSafeArea()
 
+            // Victory parade effect
+            if let winningTeam = winningTeam {
+                VictoryParadeView(winningTeam: winningTeam)
+            }
+
             VStack(spacing: 32) {
                 VStack(spacing: 12) {
                     if let winningTeam = winningTeam {
-                        Text("🎉")
-                            .font(.system(size: 64))
-
-                        Text("Team \(winningTeam.teamIdentifier.rawValue) Wins!")
-                            .font(.system(size: 36, weight: .bold))
-                            .foregroundColor(ColorTheme.textPrimary)
-
-                        Text("Final Score: \(winningTeam.totalScore)")
-                            .font(.system(size: 24, weight: .semibold))
-                            .foregroundColor(ColorTheme.textSecondary)
+                        ScoreCounterView(finalScore: winningTeam.totalScore)
                     }
                 }
                 .padding(.top, 40)
