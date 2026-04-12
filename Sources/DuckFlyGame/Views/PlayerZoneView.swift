@@ -32,6 +32,14 @@ struct PlayerZoneView: View {
                 }
             }
 
+            // Power-up items in this zone
+            ForEach(gameSimulation.powerUpItems, id: \.id) { powerUp in
+                if powerUp.position.x >= zoneMinX && powerUp.position.x < zoneMinX + zoneWidth {
+                    PowerUpFoodView(type: powerUp.type)
+                        .position(powerUp.position)
+                }
+            }
+
             // Player character (duck)
             CharacterView(
                 character: player.character,

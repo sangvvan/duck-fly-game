@@ -69,18 +69,14 @@ class MultiplayerGameManager: ObservableObject {
         for team in teams {
             for player in team.members {
                 var foodToRemove: [UUID] = []
+                var powerUpsToRemove: [UUID] = []
 
+                // Check regular food collisions
                 for food in gameSimulation.foodItems {
-                    // Skip if already claimed or not in this player's zone
                     guard food.claimedBy == nil else { continue }
 
                     if isInPlayerZone(food: food, playerNumber: player.playerNumber) {
-                        let duckHitbox = CGRect(
-                            x: player.position.x - 30,
-                            y: player.position.y - 30,
-                            width: 60,
-                            height: 60
-                        )
+                        let duckHitbox = getPlayerHitbox(player)
 
                         if duckHitbox.intersects(food.hitbox()) {
                             player.addScore(food.type.points)
@@ -89,14 +85,69 @@ class MultiplayerGameManager: ObservableObject {
                     }
                 }
 
+                // Check power-up collisions
+                for powerUp in gameSimulation.powerUpItems {
+                    guard powerUp.claimedBy == nil else { continue }
+
+                    if isInPlayerZone(food: powerUp, playerNumber: player.playerNumber) {
+                        let duckHitbox = getPlayerHitbox(player)
+
+                        if duckHitbox.intersects(powerUp.hitbox()) {
+                            applyPowerUpEffect(to: player, type: powerUp.type)
+                            powerUpsToRemove.append(powerUp.id)
+                        }
+                    }
+                }
+
                 for foodID in foodToRemove {
                     gameSimulation.removeFood(gameSimulation.foodItems.first { $0.id == foodID }!)
+                }
+
+                for powerUpID in powerUpsToRemove {
+                    gameSimulation.removePowerUp(gameSimulation.powerUpItems.first { $0.id == powerUpID }!)
                 }
             }
         }
     }
 
+    private func getPlayerHitbox(_ player: PlayerState) -> CGRect {
+        let hitboxSize = player.character.stats.hitboxSize
+        return CGRect(
+            x: player.position.x - hitboxSize / 2,
+            y: player.position.y - hitboxSize / 2,
+            width: hitboxSize,
+            height: hitboxSize
+        )
+    }
+
+    private func applyPowerUpEffect(to player: PlayerState, type: PowerUpType) {
+        switch type {
+        case .speedBoost:
+            player.activePowerUp = ActivePowerUp(type: type, startTime: Date())
+
+        case .doublePoints:
+            player.activePowerUp = ActivePowerUp(type: type, startTime: Date())
+
+        case .shield:
+            player.shieldActive = true
+            player.activePowerUp = ActivePowerUp(type: type, startTime: Date())
+
+        case .starFood:
+            player.addScore(type.bonusPoints)
+        }
+    }
+
     private func isInPlayerZone(food: FoodItem, playerNumber: Int) -> Bool {
+        let screenWidth = UIScreen.main.bounds.width
+        let zoneWidth = screenWidth / CGFloat(gameMode.playersPerTeam)
+        let zoneIndex = playerNumber % gameMode.playersPerTeam
+        let minX = CGFloat(zoneIndex) * zoneWidth
+        let maxX = minX + zoneWidth
+
+        return food.position.x >= minX && food.position.x <= maxX
+    }
+
+    private func isInPlayerZone(food: PowerUpItem, playerNumber: Int) -> Bool {
         let screenWidth = UIScreen.main.bounds.width
         let zoneWidth = screenWidth / CGFloat(gameMode.playersPerTeam)
         let zoneIndex = playerNumber % gameMode.playersPerTeam
