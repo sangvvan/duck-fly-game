@@ -56,7 +56,7 @@ struct PowerUpIndicatorView: View {
         }
     }
 
-    private func colorForPowerUp(_ type: PowerUpFoodType) -> Color {
+    private func colorForPowerUp(_ type: PowerUpType) -> Color {
         switch type {
         case .speedBoost:
             return Color(red: 1.0, green: 0.843, blue: 0.0) // Yellow
@@ -69,7 +69,7 @@ struct PowerUpIndicatorView: View {
         }
     }
 
-    private func iconForPowerUp(_ type: PowerUpFoodType) -> String {
+    private func iconForPowerUp(_ type: PowerUpType) -> String {
         switch type {
         case .speedBoost:
             return "bolt.fill"

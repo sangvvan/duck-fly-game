@@ -123,7 +123,7 @@ class GameSimulation: ObservableObject {
 
     private func calculateFoodSpeed() -> CGFloat {
         let baseSpeed: CGFloat = 150.0
-        let speedMultiplier = difficulty.foodSpeedModifier
+        let speedMultiplier = difficulty.foodSpeedMultiplier
         return baseSpeed * speedMultiplier / 60.0 // Normalize to 60fps
     }
 

@@ -342,9 +342,11 @@ class GameManager: NSObject, ObservableObject {
         let foodType = selectRandomFoodType()
 
         let food = FoodItem(
-            position: CGPoint(x: randomX, y: foodStartY),
             id: UUID(),
-            type: foodType
+            type: foodType,
+            position: CGPoint(x: randomX, y: foodStartY),
+            velocity: .zero,
+            rotation: 0
         )
         foodItems.append(food)
     }
@@ -368,12 +370,6 @@ class GameManager: NSObject, ObservableObject {
     deinit {
         stopGameLoop()
     }
-}
-
-struct FoodItem: Identifiable {
-    var position: CGPoint
-    let id: UUID
-    let type: FoodType
 }
 
 struct GameView: View {

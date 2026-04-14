@@ -27,8 +27,10 @@ struct PlayerZoneView: View {
             // Food items in this zone
             ForEach(gameSimulation.foodItems, id: \.id) { food in
                 if food.position.x >= zoneMinX && food.position.x < zoneMinX + zoneWidth {
-                    FoodItemView(food: food)
-                        .position(food.position)
+                    if #available(iOS 16.0, *) {
+                        FoodItemView(type: food.type)
+                            .position(food.position)
+                    }
                 }
             }
 
