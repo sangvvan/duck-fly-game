@@ -1,0 +1,999 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.DuckFlyGame-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/sources",
+      "importPath" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/AccessibilityFeatures.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/BackgroundScenery.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterAbilities.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterRenderer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterStats.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/ColorTheme.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckAnimations.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckCharacter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckFlyGame.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Effects/ParticleEffectSystem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/FoodDesign.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameHUD.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameOverView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/GameMode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/GameSimulation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/MultiplayerFlowCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/MultiplayerGameManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/PlayerState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/TeamState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/ParticleEffects.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PointPopup.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpCollectionEffect.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpFoodView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpType.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/TeamSynergy.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/DeviceSizeOptimization.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/ScreenUtils.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/CharacterSelectionView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MainMenuView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/ModeSelectionView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerGameOverView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerGameView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerHUDView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/PlayerZoneView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/PowerUpIndicatorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/TeamColorTheme.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/TeamLobbyView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/VictoryParade.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "DuckFlyGame",
+      "moduleOutputPath" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/Modules/DuckFlyGame.swiftmodule",
+      "objects" : [
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AccessibilityFeatures.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BackgroundScenery.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AnimalCharacter.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterAbilities.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterRenderer.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterStats.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ColorTheme.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckAnimations.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCharacter.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckFlyGame.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ParticleEffectSystem.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/FoodDesign.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameHUD.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameOverView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameState.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameMode.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameSimulation.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerFlowCoordinator.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameManager.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PlayerState.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamState.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ParticleEffects.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PointPopup.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpCollectionEffect.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpFoodView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpType.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamSynergy.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/StartMenuView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DeviceSizeOptimization.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ScreenUtils.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterSelectionView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MainMenuView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ModeSelectionView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameOverView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerHUDView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PlayerZoneView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpIndicatorView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamColorTheme.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamLobbyView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/VictoryParade.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j15",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "DuckFlyGame_main",
+        "-swift-version",
+        "5",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "testproject"
+      ],
+      "outputFileMapPath" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AccessibilityFeatures.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BackgroundScenery.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AnimalCharacter.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterAbilities.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterRenderer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterStats.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ColorTheme.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckAnimations.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCharacter.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckFlyGame.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ParticleEffectSystem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/FoodDesign.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameHUD.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameOverView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameMode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameSimulation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerFlowCoordinator.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PlayerState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ParticleEffects.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PointPopup.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpCollectionEffect.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpFoodView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpType.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamSynergy.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/StartMenuView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DeviceSizeOptimization.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ScreenUtils.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterSelectionView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MainMenuView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ModeSelectionView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameOverView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerHUDView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PlayerZoneView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpIndicatorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamColorTheme.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamLobbyView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/VictoryParade.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/Modules/DuckFlyGame.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/AccessibilityFeatures.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/BackgroundScenery.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterAbilities.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterRenderer.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterStats.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/ColorTheme.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckAnimations.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckCharacter.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckFlyGame.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Effects/ParticleEffectSystem.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/FoodDesign.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameHUD.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameOverView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameState.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/GameMode.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/GameSimulation.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/MultiplayerFlowCoordinator.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/MultiplayerGameManager.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/PlayerState.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/TeamState.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/ParticleEffects.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PointPopup.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpCollectionEffect.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpFoodView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpType.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/TeamSynergy.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/DeviceSizeOptimization.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/ScreenUtils.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/CharacterSelectionView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MainMenuView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/ModeSelectionView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerGameOverView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerGameView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerHUDView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/PlayerZoneView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/PowerUpIndicatorView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/TeamColorTheme.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/TeamLobbyView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/VictoryParade.swift"
+      ],
+      "tempsPath" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "DuckFlyGame" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "DuckFlyGame",
+      "-package-name",
+      "testproject",
+      "-c",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/AccessibilityFeatures.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/BackgroundScenery.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterAbilities.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterRenderer.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterStats.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/ColorTheme.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckAnimations.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckCharacter.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckFlyGame.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Effects/ParticleEffectSystem.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/FoodDesign.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameHUD.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameOverView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameState.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/GameMode.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/GameSimulation.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/MultiplayerFlowCoordinator.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/MultiplayerGameManager.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/PlayerState.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/TeamState.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/ParticleEffects.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PointPopup.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpCollectionEffect.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpFoodView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpType.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/TeamSynergy.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/DeviceSizeOptimization.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/ScreenUtils.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/CharacterSelectionView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MainMenuView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/ModeSelectionView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerGameOverView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerGameView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerHUDView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/PlayerZoneView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/PowerUpIndicatorView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/TeamColorTheme.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/TeamLobbyView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/VictoryParade.swift",
+      "-I",
+      "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j15",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "DuckFlyGame_main",
+      "-swift-version",
+      "5",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "testproject",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "DuckFlyGame" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame-entitlement.plist"
+    },
+    "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/AccessibilityFeatures.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/BackgroundScenery.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterAbilities.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterRenderer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterStats.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/ColorTheme.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckAnimations.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckCharacter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/DuckFlyGame.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Effects/ParticleEffectSystem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/FoodDesign.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameHUD.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameOverView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/GameState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/GameMode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/GameSimulation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/MultiplayerFlowCoordinator.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/MultiplayerGameManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/PlayerState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Multiplayer/TeamState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/ParticleEffects.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PointPopup.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpCollectionEffect.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpFoodView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpType.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/TeamSynergy.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/DeviceSizeOptimization.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/ScreenUtils.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/CharacterSelectionView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MainMenuView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/ModeSelectionView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerGameOverView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerGameView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/MultiplayerHUDView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/PlayerZoneView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/PowerUpIndicatorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/TeamColorTheme.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/TeamLobbyView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Views/VictoryParade.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/sources"
+    },
+    "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AccessibilityFeatures.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AnimalCharacter.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BackgroundScenery.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterAbilities.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterRenderer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterSelectionView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterStats.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ColorTheme.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DeviceSizeOptimization.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckAnimations.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCharacter.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckFlyGame.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/FoodDesign.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameHUD.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameMode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameOverView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameSimulation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MainMenuView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ModeSelectionView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerFlowCoordinator.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameOverView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerGameView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/MultiplayerHUDView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ParticleEffectSystem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ParticleEffects.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PlayerState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PlayerZoneView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PointPopup.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpCollectionEffect.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpFoodView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpIndicatorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpType.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ScreenUtils.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/StartMenuView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamColorTheme.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamLobbyView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamSynergy.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/VictoryParade.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.product/Objects.LinkFileList"
+    },
+    "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+    }
+  }
+}

@@ -242,8 +242,8 @@ class GameManager: NSObject, ObservableObject {
     private let foodEndSpacing: CGFloat = 50
 
     // Cached screen dimensions
-    private let screenWidth = UIScreen.main.bounds.width
-    private let screenHeight = UIScreen.main.bounds.height
+    private let screenWidth = getScreenBounds().width
+    private let screenHeight = getScreenBounds().height
 
     func startGame(difficulty: GameDifficulty) {
         self.difficulty = difficulty

@@ -25,7 +25,7 @@ class MultiplayerFlowCoordinator: ObservableObject {
     func selectDifficulty(_ difficulty: GameDifficulty) {
         selectedDifficulty = difficulty
         currentStep = .characterSelection
-        playerSelections.removeAll()
+        playerSelections = [:]
     }
 
     func selectCharacterForPlayer(_ playerNumber: Int, character: AnimalCharacter) {
@@ -81,7 +81,7 @@ class MultiplayerFlowCoordinator: ObservableObject {
         currentStep = .modeSelection
         selectedMode = nil
         selectedDifficulty = .normal
-        playerSelections.removeAll()
+        playerSelections = [:]
         gameManager = nil
     }
 }
