@@ -295,8 +295,8 @@ class GameManager: NSObject, ObservableObject {
 
     // Physics
     private var duckVelocityY: CGFloat = 0
-    private let gravity: CGFloat = 0.08  // Very slow fall (like Flappy Bird)
-    private let jumpForce: CGFloat = -6  // Jump force
+    private let gravity: CGFloat = 0.4  // Faster gravity for better feel
+    private let jumpForce: CGFloat = -10  // Stronger jump force
     private let duckWidth: CGFloat = 50
     private let duckHeight: CGFloat = 50
 
@@ -327,6 +327,7 @@ class GameManager: NSObject, ObservableObject {
 
     func jumpDuck() {
         duckVelocityY = jumpForce
+        AudioManager.shared.playSoundIfEnabled("jump")
     }
 
     func resetGame() {
@@ -418,6 +419,12 @@ class GameManager: NSObject, ObservableObject {
 
                 // Haptic feedback
                 HapticManager.shared.impact(.light)
+                AudioManager.shared.playSoundIfEnabled("foodCollect")
+
+                // Combo sound
+                if comboCount > 1 {
+                    AudioManager.shared.playSoundIfEnabled("combo")
+                }
 
                 foodItems.remove(at: i)
             }
@@ -495,30 +502,77 @@ struct GameView: View {
 
                 // Game HUD
                 VStack {
-                    GameHUD(
-                        score: gameManager.score,
-                        comboCount: gameManager.comboCount,
-                        isComboActive: gameManager.comboCount > 0
-                    )
+                    HStack {
+                        GameHUD(
+                            score: gameManager.score,
+                            comboCount: gameManager.comboCount,
+                            isComboActive: gameManager.comboCount > 0
+                        )
+
+                        Spacer()
+
+                        // Food collection progress
+                        VStack(spacing: 8) {
+                            // Timer
+                            VStack(spacing: 2) {
+                                Image(systemName: "clock.fill")
+                                    .font(.system(size: 12))
+                                Text(formatTime(gameManager.gameTime))
+                                    .font(.system(size: 16, weight: .bold))
+                            }
+                            .foregroundColor(ColorTheme.textPrimary)
+                            .padding(10)
+                            .background(RoundedRectangle(cornerRadius: 10).fill(ColorTheme.lightBackground))
+
+                            // Food progress
+                            VStack(spacing: 2) {
+                                Text("Food")
+                                    .font(.caption2)
+                                    .foregroundColor(ColorTheme.textSecondary)
+                                Text("\(gameManager.foodCollected)/\(gameManager.foodTarget)")
+                                    .font(.system(size: 14, weight: .bold))
+                                    .foregroundColor(gameManager.foodCollected >= gameManager.foodTarget ? ColorTheme.success : ColorTheme.primaryAction)
+
+                                if gameManager.foodTarget > 0 {
+                                    GeometryReader { geo in
+                                        ZStack(alignment: .leading) {
+                                            RoundedRectangle(cornerRadius: 3)
+                                                .fill(ColorTheme.textSecondary.opacity(0.2))
+                                            RoundedRectangle(cornerRadius: 3)
+                                                .fill(gameManager.foodCollected >= gameManager.foodTarget ? ColorTheme.success : ColorTheme.primaryAction)
+                                                .frame(width: max(2, geo.size.width * min(CGFloat(gameManager.foodCollected) / CGFloat(gameManager.foodTarget), 1.0)))
+                                        }
+                                        .frame(height: 4)
+                                    }
+                                    .frame(height: 4)
+                                }
+                            }
+                            .padding(8)
+                            .background(RoundedRectangle(cornerRadius: 8).fill(ColorTheme.lightBackground))
+                        }
+                    }
+                    .padding(12)
 
                     Spacer()
 
-                    // Timer at bottom
-                    HStack {
-                        Spacer()
-                        VStack(spacing: 4) {
-                            Image(systemName: "clock.fill")
-                                .font(.system(size: 12))
-                            Text(formatTime(gameManager.gameTime))
-                                .font(.system(size: 14, weight: .semibold))
-                        }
-                        .foregroundColor(ColorTheme.textPrimary)
-                        .padding(12)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(ColorTheme.lightBackground)
-                        )
-                        .padding()
+                    // Instructions
+                    if gameManager.foodCollected < gameManager.foodTarget {
+                        Text("TAP to fly • Collect \(gameManager.foodTarget - gameManager.foodCollected) more food")
+                            .font(.caption)
+                            .foregroundColor(ColorTheme.textSecondary)
+                            .padding(8)
+                            .background(Color.black.opacity(0.3))
+                            .cornerRadius(6)
+                            .padding(.horizontal, 12)
+                    } else {
+                        Text("✅ Food collected! Prepare for boss fight...")
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .foregroundColor(ColorTheme.success)
+                            .padding(8)
+                            .background(ColorTheme.success.opacity(0.2))
+                            .cornerRadius(6)
+                            .padding(.horizontal, 12)
                     }
                 }
                 .zIndex(10)

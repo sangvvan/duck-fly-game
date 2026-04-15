@@ -6,7 +6,9 @@
       "Bash(git:*)",
       "Bash(gh:*)",
       "Bash(swift build *)",
-      "Bash(xcodebuild -scheme DuckFlyGame -destination generic/platform=iOS)"
+      "Bash(xcodebuild -scheme DuckFlyGame -destination generic/platform=iOS)",
+      "Bash(grep -E \"\\\\.swift$\")",
+      "Bash(xcodebuild -scheme DuckFlyGame -destination 'generic/platform=iOS Simulator' build)"
     ]
   }
 }
