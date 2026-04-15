@@ -102,14 +102,23 @@ struct StartMenuView: View {
     }
 }
 
-#Preview {
+struct StartMenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        StartMenuPreviewWrapper()
+    }
+}
+
+struct StartMenuPreviewWrapper: View {
     @State var gameState: GameScreenState = .menu
     @State var selectedDifficulty: GameDifficulty = .normal
 
-    return ZStack {
-        ColorTheme.skyGradient()
-            .ignoresSafeArea()
+    var body: some View {
+        ZStack {
+            ColorTheme.skyGradient()
+                .ignoresSafeArea()
 
-        StartMenuView(gameState: $gameState, selectedDifficulty: $selectedDifficulty)
+            StartMenuView(gameState: $gameState, selectedDifficulty: $selectedDifficulty)
+        }
     }
 }
+
