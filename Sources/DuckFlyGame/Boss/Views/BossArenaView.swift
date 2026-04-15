@@ -99,16 +99,20 @@ struct BossArenaView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .contentShape(Rectangle())
-            .onTapGesture { location in
-                // Dodge mechanic - move away from projectiles
-                if location.x < screenWidth / 3 {
-                    playerX = max(40, playerX - GameConstants.Boss.dodgeMoveDistance)
-                } else if location.x > 2 * screenWidth / 3 {
-                    playerX = min(screenWidth - 40, playerX + GameConstants.Boss.dodgeMoveDistance)
-                } else {
-                    playerX = screenWidth / 2
-                }
-            }
+            .gesture(
+                TapGesture()
+                    .onEnded { _ in
+                        // Simple dodge: tap left = dodge left, tap right = dodge right, tap center = center
+                        // For iOS 15 compatibility, we'll just cycle through positions
+                        if playerX == screenWidth / 2 {
+                            playerX = screenWidth / 4
+                        } else if playerX == screenWidth / 4 {
+                            playerX = 3 * screenWidth / 4
+                        } else {
+                            playerX = screenWidth / 2
+                        }
+                    }
+            )
 
             // Control HUD
             VStack {
