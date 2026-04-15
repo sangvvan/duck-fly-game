@@ -105,6 +105,8 @@ struct SoloGameView: View {
         }
         .onChange(of: gameManager.foodCollectionComplete) { completed in
             if completed {
+                // Transfer collected food to battle points
+                progressionManager.foodBattlePoints = gameManager.foodCollected
                 soloPhase = .bossFighting
             }
         }
@@ -293,8 +295,8 @@ class GameManager: NSObject, ObservableObject {
 
     // Physics
     private var duckVelocityY: CGFloat = 0
-    private let gravity: CGFloat = 0.15  // Slower fall
-    private let jumpForce: CGFloat = -8  // Weaker but smoother jump
+    private let gravity: CGFloat = 0.08  // Very slow fall (like Flappy Bird)
+    private let jumpForce: CGFloat = -6  // Jump force
     private let duckWidth: CGFloat = 50
     private let duckHeight: CGFloat = 50
 
@@ -314,7 +316,7 @@ class GameManager: NSObject, ObservableObject {
         score = 0
         comboCount = 0
         gameTime = 0
-        duckPosition = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
+        duckPosition = CGPoint(x: screenWidth / 2, y: screenHeight - 150)  // Start near bottom
         duckVelocityY = 0
         foodItems.removeAll()
         gameActive = true
