@@ -12,14 +12,18 @@ struct DuckFlyGameApp: App {
 struct ContentView: View {
     @State private var gameState: GameScreenState = .mainMenu
     @StateObject var flowCoordinator = MultiplayerFlowCoordinator()
+    @StateObject var levelProgress = LevelProgressManager()
 
     var body: some View {
         switch gameState {
         case .mainMenu:
             MainMenuView(gameState: $gameState)
 
+        case .levelMap:
+            LevelMapView(levelProgress: levelProgress, gameState: $gameState)
+
         case .menu, .playing, .gameOver:
-            SoloGameView(gameState: $gameState)
+            SoloGameView(levelProgress: levelProgress, gameState: $gameState)
 
         case .multiplayerSetup:
             MultiplayerSetupView(
@@ -47,8 +51,19 @@ struct ContentView: View {
 
 struct SoloGameView: View {
     @StateObject var gameManager = GameManager()
+    @StateObject var progressionManager = RoundProgressionManager()
+    @ObservedObject var levelProgress: LevelProgressManager
     @Binding var gameState: GameScreenState
-    @State private var selectedDifficulty: GameDifficulty = .normal
+    @State private var soloPhase: SoloPhase = .intro
+    @State private var levelConfig: LevelConfig = LevelConfig.make(level: 1)
+
+    enum SoloPhase {
+        case intro
+        case collecting
+        case bossFighting
+        case roundComplete
+        case death
+    }
 
     var body: some View {
         ZStack {
@@ -58,44 +73,83 @@ struct SoloGameView: View {
             BackgroundScenery()
                 .ignoresSafeArea()
 
-            switch gameState {
-            case .menu:
-                StartMenuView(gameState: $gameState, selectedDifficulty: $selectedDifficulty)
-                    .transition(.opacity.combined(with: .scale(scale: 0.95)))
+            switch soloPhase {
+            case .intro:
+                BossRoundIntroView(round: levelConfig.theme, progressionManager: progressionManager)
 
-            case .playing:
+            case .collecting:
                 GameView(gameManager: gameManager)
                     .ignoresSafeArea()
-                    .transition(.opacity)
 
-            case .gameOver:
-                GameOverView(score: gameManager.score) {
-                    HapticManager.shared.selection()
-                    gameState = .menu
-                    gameManager.resetGame()
+            case .bossFighting:
+                BossArenaView(progressionManager: progressionManager, round: levelConfig.theme)
+
+            case .roundComplete:
+                RoundCompleteView(
+                    progressionManager: progressionManager,
+                    round: levelConfig.theme
+                ) {
+                    levelProgress.markCompleted(level: levelProgress.currentLevel)
+                    levelProgress.unlockNextLevel()
+                    gameState = .levelMap
                 }
-                .transition(.opacity.combined(with: .scale(scale: 1.05)))
 
-            default:
-                StartMenuView(gameState: $gameState, selectedDifficulty: $selectedDifficulty)
+            case .death:
+                BossDeathView(progressionManager: progressionManager) {
+                    gameState = .levelMap
+                }
             }
         }
         .onAppear {
-            ColorTheme.verifyAccessibility()
-            HapticManager.shared.notification(.success)
+            configureForLevel(levelProgress.currentLevel)
         }
-        .onChange(of: gameState) { newState in
-            if newState == .playing {
-                gameManager.startGame(difficulty: selectedDifficulty)
-                HapticManager.shared.impact(.light)
+        .onChange(of: gameManager.foodCollectionComplete) { completed in
+            if completed {
+                soloPhase = .bossFighting
             }
         }
-        .onChange(of: gameManager.gameActive) { isActive in
-            if !isActive && gameState == .playing {
-                HapticManager.shared.notification(.warning)
-                gameState = .gameOver
+        .onChange(of: progressionManager.playerHP) { hp in
+            if hp <= 0 {
+                soloPhase = .death
             }
         }
+        .onChange(of: progressionManager.phase) { phase in
+            switch phase {
+            case .roundIntro:
+                soloPhase = .intro
+            case .collecting:
+                soloPhase = .collecting
+            case .bossFighting:
+                soloPhase = .bossFighting
+            case .roundComplete:
+                soloPhase = .roundComplete
+            case .gameOver, .bossDeathOptions:
+                soloPhase = .death
+            default:
+                break
+            }
+        }
+    }
+
+    private func configureForLevel(_ levelNum: Int) {
+        levelConfig = LevelConfig.make(level: levelNum)
+
+        gameManager.foodTarget = levelConfig.foodTarget
+        gameManager.foodCollected = 0
+        gameManager.foodCollectionComplete = false
+        gameManager.startGame(difficulty: .normal)
+
+        progressionManager.startNewGame()
+        progressionManager.currentRound = levelConfig.theme
+        progressionManager.playerHP = progressionManager.duckStats.maxHP
+        progressionManager.phase = .roundIntro
+        progressionManager.bossState = BossState(
+            round: levelConfig.theme,
+            bossHP: levelConfig.bossHP,
+            bossAttackDamage: levelConfig.bossAttackDamage
+        )
+
+        soloPhase = .intro
     }
 }
 
@@ -226,6 +280,8 @@ class GameManager: NSObject, ObservableObject {
     @Published var gameActive = false
     @Published var comboCount = 0
     @Published var gameTime: TimeInterval = 0
+    @Published var foodCollected: Int = 0
+    @Published var foodCollectionComplete: Bool = false
 
     private var displayLink: CADisplayLink?
     private var difficulty: GameDifficulty = .normal
@@ -233,6 +289,7 @@ class GameManager: NSObject, ObservableObject {
     private var gameStartTime: TimeInterval = 0
     private let comboTimeout: TimeInterval = 1.5
     private let gameTimeLimit: TimeInterval = 60  // 60 second game
+    var foodTarget: Int = 50
 
     // Game constants
     private let baseGameSpeed: CGFloat = 5
@@ -265,6 +322,8 @@ class GameManager: NSObject, ObservableObject {
         gameTime = 0
         foodItems.removeAll()
         gameActive = false
+        foodCollected = 0
+        foodCollectionComplete = false
     }
 
     func startGameLoop() {
@@ -308,6 +367,12 @@ class GameManager: NSObject, ObservableObject {
             if distance < collisionRadius {
                 let points = foodItems[i].type.points
                 score += points
+                foodCollected += 1
+
+                // Check if food target reached
+                if foodCollected >= foodTarget {
+                    foodCollectionComplete = true
+                }
 
                 // Update combo
                 let currentTime = Date().timeIntervalSince1970

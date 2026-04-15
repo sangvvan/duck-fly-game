@@ -25,7 +25,7 @@ struct MainMenuView: View {
                 .padding(.top, 40)
 
                 VStack(spacing: 16) {
-                    Button(action: { gameState = .menu }) {
+                    Button(action: { gameState = .levelMap }) {
                         HStack {
                             Image(systemName: "person.fill")
                                 .font(.system(size: 20, weight: .semibold))
