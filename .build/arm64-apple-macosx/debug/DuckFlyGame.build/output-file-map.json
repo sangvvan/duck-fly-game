@@ -16,6 +16,69 @@
     "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BackgroundScenery.swiftdeps",
     "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BackgroundScenery.dia"
   },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossRound.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRound.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRound.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRound~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRound.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRound.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossState.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossState.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossState.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossState~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossState.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossState.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckCosmetic.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCosmetic.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCosmetic.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCosmetic~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCosmetic.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCosmetic.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckStats.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckStats.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckStats.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckStats~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckStats.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckStats.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/RoundProgressionManager.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundProgressionManager.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundProgressionManager.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundProgressionManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundProgressionManager.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundProgressionManager.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossArenaView.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossArenaView.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossArenaView.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossArenaView~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossArenaView.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossArenaView.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossDeathView.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossDeathView.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossDeathView.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossDeathView~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossDeathView.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossDeathView.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossRoundIntroView.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRoundIntroView.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRoundIntroView.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRoundIntroView~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRoundIntroView.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRoundIntroView.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/RoundCompleteView.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundCompleteView.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundCompleteView.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundCompleteView~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundCompleteView.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundCompleteView.dia"
+  },
   "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift": {
     "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AnimalCharacter.d",
     "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AnimalCharacter.swift.o",
@@ -190,6 +253,27 @@
     "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamSynergy~partial.swiftmodule",
     "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamSynergy.swiftdeps",
     "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamSynergy.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelConfig.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelConfig.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelConfig.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelConfig~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelConfig.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelConfig.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelProgressManager.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelProgressManager.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelProgressManager.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelProgressManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelProgressManager.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelProgressManager.dia"
+  },
+  "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/Views/LevelMapView.swift": {
+    "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelMapView.d",
+    "object": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelMapView.swift.o",
+    "swiftmodule": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelMapView~partial.swiftmodule",
+    "swift-dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelMapView.swiftdeps",
+    "diagnostics": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelMapView.dia"
   },
   "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift": {
     "dependencies": "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/StartMenuView.d",

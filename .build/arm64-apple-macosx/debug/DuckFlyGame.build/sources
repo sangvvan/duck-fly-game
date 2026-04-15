@@ -1,5 +1,14 @@
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/AccessibilityFeatures.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/BackgroundScenery.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossRound.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossState.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckCosmetic.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckStats.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/RoundProgressionManager.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossArenaView.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossDeathView.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossRoundIntroView.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/RoundCompleteView.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterAbilities.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterRenderer.swift
@@ -25,6 +34,9 @@
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpFoodView.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpType.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/TeamSynergy.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelConfig.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelProgressManager.swift
+/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/Views/LevelMapView.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/DeviceSizeOptimization.swift
 /Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/ScreenUtils.swift

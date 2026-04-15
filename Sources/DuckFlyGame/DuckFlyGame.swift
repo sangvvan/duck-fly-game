@@ -291,6 +291,13 @@ class GameManager: NSObject, ObservableObject {
     private let gameTimeLimit: TimeInterval = 60  // 60 second game
     var foodTarget: Int = 50
 
+    // Physics
+    private var duckVelocityY: CGFloat = 0
+    private let gravity: CGFloat = 0.4
+    private let jumpForce: CGFloat = -12
+    private let duckWidth: CGFloat = 50
+    private let duckHeight: CGFloat = 50
+
     // Game constants
     private let baseGameSpeed: CGFloat = 5
     private let collisionRadius: CGFloat = 40
@@ -308,11 +315,16 @@ class GameManager: NSObject, ObservableObject {
         comboCount = 0
         gameTime = 0
         duckPosition = CGPoint(x: screenWidth / 2, y: screenHeight / 2)
+        duckVelocityY = 0
         foodItems.removeAll()
         gameActive = true
         gameStartTime = Date().timeIntervalSince1970
         generateFood()
         startGameLoop()
+    }
+
+    func jumpDuck() {
+        duckVelocityY = jumpForce
     }
 
     func resetGame() {
@@ -350,6 +362,25 @@ class GameManager: NSObject, ObservableObject {
             gameActive = false
             return
         }
+
+        // Apply gravity to duck
+        duckVelocityY += gravity
+        duckPosition.y += duckVelocityY
+
+        // Clamp duck to screen bounds (top and bottom)
+        let duckRadius = duckWidth / 2
+        if duckPosition.y < duckRadius {
+            duckPosition.y = duckRadius
+            duckVelocityY = 0
+        }
+        if duckPosition.y > screenHeight - duckRadius {
+            duckPosition.y = screenHeight - duckRadius
+            duckVelocityY = 0
+            gameActive = false  // Duck hit ground = game over
+        }
+
+        // Clamp duck to screen width
+        duckPosition.x = max(duckRadius, min(duckPosition.x, screenWidth - duckRadius))
 
         // Update food items and remove off-screen items
         for i in stride(from: foodItems.count - 1, through: 0, by: -1) {
@@ -491,12 +522,12 @@ struct GameView: View {
                 .zIndex(10)
             }
             .contentShape(Rectangle())
-            .modifier(ContinuousHoverModifier { location in
-                gameManager.moveDuck(to: location)
-            })
+            .onTapGesture {
+                gameManager.jumpDuck()
+            }
             .accessibilityElement(
                 label: "Duck Fly Game",
-                hint: "Move duck to collect falling food"
+                hint: "Tap to make duck fly"
             )
         }
     }

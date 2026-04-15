@@ -32,6 +32,42 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossRound.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckCosmetic.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckStats.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/RoundProgressionManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossArenaView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossDeathView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossRoundIntroView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/RoundCompleteView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift"
         },
         {
@@ -132,6 +168,18 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelProgressManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/Views/LevelMapView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift"
         },
         {
@@ -201,6 +249,15 @@
       "objects" : [
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AccessibilityFeatures.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BackgroundScenery.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRound.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossState.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCosmetic.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckStats.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundProgressionManager.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossArenaView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossDeathView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRoundIntroView.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundCompleteView.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/AnimalCharacter.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterAbilities.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterRenderer.swift.o",
@@ -226,6 +283,9 @@
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpFoodView.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpType.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/TeamSynergy.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelConfig.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelProgressManager.swift.o",
+        "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelMapView.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/StartMenuView.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DeviceSizeOptimization.swift.o",
         "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/ScreenUtils.swift.o",
@@ -293,6 +353,42 @@
         {
           "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BackgroundScenery.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRound.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCosmetic.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckStats.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundProgressionManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossArenaView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossDeathView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRoundIntroView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundCompleteView.swift.o"
         },
         {
           "kind" : "file",
@@ -396,6 +492,18 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelProgressManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelMapView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/StartMenuView.swift.o"
         },
         {
@@ -459,6 +567,15 @@
       "sources" : [
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/AccessibilityFeatures.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/BackgroundScenery.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossRound.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossState.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckCosmetic.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckStats.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/RoundProgressionManager.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossArenaView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossDeathView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossRoundIntroView.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/RoundCompleteView.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterAbilities.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterRenderer.swift",
@@ -484,6 +601,9 @@
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpFoodView.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpType.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/TeamSynergy.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelConfig.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelProgressManager.swift",
+        "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/Views/LevelMapView.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/DeviceSizeOptimization.swift",
         "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/ScreenUtils.swift",
@@ -516,6 +636,15 @@
       "-c",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/AccessibilityFeatures.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/BackgroundScenery.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossRound.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossState.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckCosmetic.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckStats.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/RoundProgressionManager.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossArenaView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossDeathView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossRoundIntroView.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/RoundCompleteView.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterAbilities.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/CharacterRenderer.swift",
@@ -541,6 +670,9 @@
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpFoodView.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/PowerUpType.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/PowerUps/TeamSynergy.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelConfig.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelProgressManager.swift",
+      "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/Views/LevelMapView.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/DeviceSizeOptimization.swift",
       "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Utils/ScreenUtils.swift",
@@ -650,6 +782,42 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossRound.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/BossState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckCosmetic.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/DuckStats.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/RoundProgressionManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossArenaView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossDeathView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/BossRoundIntroView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Boss/Views/RoundCompleteView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Characters/AnimalCharacter.swift"
         },
         {
@@ -750,6 +918,18 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/LevelProgressManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/Solo/Views/LevelMapView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/Sources/DuckFlyGame/StartMenuView.swift"
         },
         {
@@ -828,6 +1008,26 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossArenaView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossDeathView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRound.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossRoundIntroView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/BossState.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/CharacterAbilities.swift.o"
         },
         {
@@ -860,7 +1060,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckCosmetic.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckFlyGame.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/DuckStats.swift.o"
         },
         {
           "kind" : "file",
@@ -885,6 +1093,18 @@
         {
           "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/GameState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelMapView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/LevelProgressManager.swift.o"
         },
         {
           "kind" : "file",
@@ -949,6 +1169,14 @@
         {
           "kind" : "file",
           "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/PowerUpType.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundCompleteView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hikaruvo/testproject/.build/arm64-apple-macosx/debug/DuckFlyGame.build/RoundProgressionManager.swift.o"
         },
         {
           "kind" : "file",
