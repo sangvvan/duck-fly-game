@@ -53,21 +53,6 @@ class ParticleEmitter: ObservableObject {
     }
 }
 
-/// Particle view
-struct ParticleView: View {
-    let particle: Particle
-
-    var body: some View {
-        Circle()
-            .fill(particle.color)
-            .frame(width: 6, height: 6)
-            .opacity(particle.opacity)
-            .scaleEffect(particle.scale)
-            .position(particle.position)
-            .shadow(color: particle.color.opacity(0.5), radius: 2)
-    }
-}
-
 #Preview {
     ZStack {
         ColorTheme.skyGradient()

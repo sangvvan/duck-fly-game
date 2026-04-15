@@ -103,8 +103,8 @@ struct StartMenuView: View {
 }
 
 #Preview {
-    @Previewable @State var gameState: GameScreenState = .menu
-    @Previewable @State var selectedDifficulty: GameDifficulty = .normal
+    @State var gameState: GameScreenState = .menu
+    @State var selectedDifficulty: GameDifficulty = .normal
 
     return ZStack {
         ColorTheme.skyGradient()
