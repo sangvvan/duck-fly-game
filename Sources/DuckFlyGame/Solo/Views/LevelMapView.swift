@@ -117,9 +117,7 @@ struct LevelNodeView: View {
             gameState = .menu
         }) {
             VStack(spacing: 4) {
-                let config = LevelConfig.make(level: levelNumber)
-
-                Text(config.theme.emoji)
+                Text(LevelConfig.make(level: levelNumber).theme.emoji)
                     .font(.system(size: 20))
 
                 Text("\(levelNumber)")
