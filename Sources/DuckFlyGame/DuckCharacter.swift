@@ -19,13 +19,20 @@ struct DuckCharacter: View {
                 .frame(width: size * 0.58, height: size * 0.58)
 
             // Duck beak
-            UnevenRoundedRectangle(
-                topLeadingRadius: size * 0.08,
-                bottomLeadingRadius: size * 0.08
-            )
-            .fill(ColorTheme.duckBeak)
-            .frame(width: size * 0.2, height: size * 0.1)
-            .offset(x: size * 0.2, y: -size * 0.05)
+            if #available(iOS 16.0, *) {
+                UnevenRoundedRectangle(
+                    topLeadingRadius: size * 0.08,
+                    bottomLeadingRadius: size * 0.08
+                )
+                .fill(ColorTheme.duckBeak)
+                .frame(width: size * 0.2, height: size * 0.1)
+                .offset(x: size * 0.2, y: -size * 0.05)
+            } else {
+                RoundedRectangle(cornerRadius: size * 0.08)
+                    .fill(ColorTheme.duckBeak)
+                    .frame(width: size * 0.2, height: size * 0.1)
+                    .offset(x: size * 0.2, y: -size * 0.05)
+            }
 
             // Duck eye
             Circle()

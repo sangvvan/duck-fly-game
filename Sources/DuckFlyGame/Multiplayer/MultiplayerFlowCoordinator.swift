@@ -47,7 +47,7 @@ class MultiplayerFlowCoordinator: ObservableObject {
         // Assign players to teams and characters
         var playerNumber = 0
         for teamIndex in 0..<2 {
-            let team = gameManager.teams[teamIndex]
+            let _ = gameManager.teams[teamIndex]
             let teamIdentifier: TeamIdentifier = teamIndex == 0 ? .red : .blue
 
             for _ in 0..<mode.playersPerTeam {

@@ -64,7 +64,7 @@ struct BackgroundScenery: View {
             CloudShape()
                 .fill(Color.white.opacity(0.35))
                 .frame(height: 100)
-                .offset(y: 250, x: offset3)
+                .offset(x: offset3, y: 250)
                 .ignoresSafeArea()
         }
         .onAppear {

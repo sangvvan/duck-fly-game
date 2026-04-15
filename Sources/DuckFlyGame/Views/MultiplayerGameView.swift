@@ -88,5 +88,5 @@ struct MultiplayerGameView: View {
     gameManager.teams[0].addMember(PlayerState(playerNumber: 0, team: .red, character: .duck))
     gameManager.teams[1].addMember(PlayerState(playerNumber: 1, team: .blue, character: .bunny))
 
-    MultiplayerGameView(gameManager: gameManager)
+    return MultiplayerGameView(gameManager: gameManager)
 }

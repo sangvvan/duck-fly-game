@@ -49,7 +49,7 @@ struct PowerUpFoodView: View {
     private var speedBoostView: some View {
         ZStack {
             // Lightning bolt
-            Canvas { context in
+            Canvas { context, size in
                 var path = Path()
                 path.move(to: CGPoint(x: 0, y: -type.size * 0.4))
                 path.addLine(to: CGPoint(x: type.size * 0.15, y: -type.size * 0.05))
@@ -76,7 +76,7 @@ struct PowerUpFoodView: View {
     private var doublePointsView: some View {
         ZStack {
             // Gem shape (hexagon approximation)
-            Canvas { context in
+            Canvas { context, size in
                 let sides = 6
                 var path = Path()
                 for i in 0..<sides {
@@ -108,13 +108,13 @@ struct PowerUpFoodView: View {
     private var shieldView: some View {
         ZStack {
             // Shield hexagon
-            Canvas { context in
+            Canvas { context, size in
                 let path = createHexagonPath(size: type.size * 0.35)
                 context.stroke(path, with: .color(type.primaryColor), lineWidth: 2)
             }
 
             // Shield interior
-            Canvas { context in
+            Canvas { context, size in
                 let path = createHexagonPath(size: type.size * 0.3)
                 context.fill(path, with: .color(type.primaryColor.opacity(0.2)))
             }
@@ -130,14 +130,14 @@ struct PowerUpFoodView: View {
     private var starFoodView: some View {
         ZStack {
             // Star shape
-            Canvas { context in
+            Canvas { context, size in
                 let path = createStarPath(size: type.size * 0.35)
                 context.fill(path, with: .color(type.primaryColor))
                 context.stroke(path, with: .color(.white.opacity(0.6)), lineWidth: 1.5)
             }
 
             // Inner star for depth
-            Canvas { context in
+            Canvas { context, size in
                 let path = createStarPath(size: type.size * 0.15)
                 context.fill(path, with: .color(.white.opacity(0.7)))
             }

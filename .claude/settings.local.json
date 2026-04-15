@@ -5,7 +5,8 @@
       "Skill(schedule:*)",
       "Bash(git:*)",
       "Bash(gh:*)",
-      "Bash(swift build *)"
+      "Bash(swift build *)",
+      "Bash(xcodebuild -scheme DuckFlyGame -destination generic/platform=iOS)"
     ]
   }
 }
