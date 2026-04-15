@@ -32,7 +32,7 @@ struct BossArenaView: View {
                         if bossAttackFlash {
                             Circle()
                                 .fill(Color.red.opacity(0.3))
-                                .frame(width: 120, height: 120)
+                                .frame(width: GameConstants.Boss.bossGlowSize, height: GameConstants.Boss.bossGlowSize)
                         }
 
                         // Boss character
@@ -64,7 +64,7 @@ struct BossArenaView: View {
                 ForEach(bossProjectiles.indices, id: \.self) { index in
                     Circle()
                         .fill(Color.red.opacity(0.8))
-                        .frame(width: 12, height: 12)
+                        .frame(width: GameConstants.Boss.projectileSize, height: GameConstants.Boss.projectileSize)
                         .position(bossProjectiles[index])
                 }
 
@@ -102,9 +102,9 @@ struct BossArenaView: View {
             .onTapGesture { location in
                 // Dodge mechanic - move away from projectiles
                 if location.x < screenWidth / 3 {
-                    playerX = max(40, playerX - 80)
+                    playerX = max(40, playerX - GameConstants.Boss.dodgeMoveDistance)
                 } else if location.x > 2 * screenWidth / 3 {
-                    playerX = min(screenWidth - 40, playerX + 80)
+                    playerX = min(screenWidth - 40, playerX + GameConstants.Boss.dodgeMoveDistance)
                 } else {
                     playerX = screenWidth / 2
                 }
@@ -199,7 +199,7 @@ struct BossArenaView: View {
         progressionManager.phase = .bossFighting
 
         // Boss movement and attack timer
-        gameTimer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
+        gameTimer = Timer.scheduledTimer(withTimeInterval: GameConstants.Timers.bossLoopInterval, repeats: true) { _ in
             // Boss moves side to side in a sine wave
             let movement = sin(Date().timeIntervalSince1970 * 2) * (screenWidth / 3)
             bossX = screenWidth / 2 + movement
@@ -210,7 +210,7 @@ struct BossArenaView: View {
             }
 
             for i in 0..<bossProjectiles.count {
-                bossProjectiles[i].y += 8  // Projectile falls down
+                bossProjectiles[i].y += GameConstants.Boss.projectileSpeed
             }
 
             // Boss attacks every 2 seconds
