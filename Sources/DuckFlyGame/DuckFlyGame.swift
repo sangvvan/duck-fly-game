@@ -293,8 +293,8 @@ class GameManager: NSObject, ObservableObject {
 
     // Physics
     private var duckVelocityY: CGFloat = 0
-    private let gravity: CGFloat = 0.4
-    private let jumpForce: CGFloat = -12
+    private let gravity: CGFloat = 0.15  // Slower fall
+    private let jumpForce: CGFloat = -8  // Weaker but smoother jump
     private let duckWidth: CGFloat = 50
     private let duckHeight: CGFloat = 50
 
