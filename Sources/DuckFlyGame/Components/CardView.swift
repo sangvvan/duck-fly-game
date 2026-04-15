@@ -57,6 +57,8 @@ struct SimpleCardView<Content: View>: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     ZStack {
         ColorTheme.skyGradient()

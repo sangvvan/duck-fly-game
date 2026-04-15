@@ -95,6 +95,8 @@ struct ModeCard: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     ModeSelectionView(flowCoordinator: MultiplayerFlowCoordinator())
 }

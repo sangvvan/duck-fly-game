@@ -44,7 +44,7 @@ enum GameConstants {
     }
 
     enum Audio {
-        static let isEnabled: Bool {
+        static var isEnabled: Bool {
             UserDefaults.standard.bool(forKey: "soundEnabled")
         }
 

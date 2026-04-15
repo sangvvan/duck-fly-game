@@ -177,6 +177,8 @@ struct ScoreCounterView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     let team = TeamState(teamIdentifier: .red)
     team.addMember(PlayerState(playerNumber: 0, team: .red, character: .duck))

@@ -58,6 +58,8 @@ struct BossDeathView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     BossDeathView(progressionManager: RoundProgressionManager())
 }

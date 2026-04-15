@@ -144,6 +144,8 @@ struct ScoreBreakdownRow: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     GameOverView(score: 875, onPlayAgain: {})
 }

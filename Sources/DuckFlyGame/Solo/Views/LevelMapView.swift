@@ -139,6 +139,8 @@ struct LevelNodeView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     LevelMapView(
         levelProgress: LevelProgressManager(),

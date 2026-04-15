@@ -67,6 +67,8 @@ struct BossRoundIntroView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     BossRoundIntroView(
         round: .amazon,

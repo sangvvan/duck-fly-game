@@ -99,6 +99,8 @@ struct PlayerZoneView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     let player = PlayerState(playerNumber: 0, team: .red, character: .duck)
     player.position = CGPoint(x: 150, y: 600)

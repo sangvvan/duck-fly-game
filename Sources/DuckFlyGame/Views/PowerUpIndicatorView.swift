@@ -83,6 +83,8 @@ struct PowerUpIndicatorView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     let powerUp = ActivePowerUp(type: .doublePoints, startTime: Date())
     return PowerUpIndicatorView(powerUp: powerUp)

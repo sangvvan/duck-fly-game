@@ -198,6 +198,8 @@ struct PowerUpFoodView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     VStack(spacing: 32) {
         Text("Power-Up Foods")

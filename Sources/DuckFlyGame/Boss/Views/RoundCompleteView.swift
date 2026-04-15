@@ -112,6 +112,8 @@ struct RoundCompleteView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     RoundCompleteView(
         progressionManager: RoundProgressionManager(),

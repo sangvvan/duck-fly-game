@@ -94,6 +94,8 @@ struct TeamSynergyBonusView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     VStack(spacing: 40) {
         TeamSynergyBonusView(team: .red)

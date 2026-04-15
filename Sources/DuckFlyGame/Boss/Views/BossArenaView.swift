@@ -238,6 +238,8 @@ struct BossArenaView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     let manager = RoundProgressionManager()
     manager.createBossState()

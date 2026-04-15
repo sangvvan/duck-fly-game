@@ -83,6 +83,8 @@ struct MultiplayerGameView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     let gameManager = MultiplayerGameManager(gameMode: .oneVsOne)
     gameManager.teams[0].addMember(PlayerState(playerNumber: 0, team: .red, character: .duck))

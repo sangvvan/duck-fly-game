@@ -88,6 +88,8 @@ struct CharacterSelectionCard: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     VStack(spacing: 16) {
         CharacterView(character: .duck, teamColor: ColorTheme.primaryAction, size: 60, showIdleAnimation: true)

@@ -114,6 +114,8 @@ struct TeamLineupView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     let coordinator = MultiplayerFlowCoordinator()
     coordinator.selectedMode = .oneVsOne

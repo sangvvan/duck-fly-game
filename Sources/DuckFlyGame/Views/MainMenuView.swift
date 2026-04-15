@@ -61,6 +61,8 @@ struct MainMenuView: View {
     }
 }
 
+#if DEBUG && os(iOS)
+@available(iOS 17.0, *)
 #Preview {
     MainMenuView(gameState: .constant(.mainMenu))
 }
