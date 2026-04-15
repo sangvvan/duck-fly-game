@@ -289,23 +289,23 @@ class GameManager: NSObject, ObservableObject {
     private var difficulty: GameDifficulty = .normal
     private var lastCollectionTime: TimeInterval = 0
     private var gameStartTime: TimeInterval = 0
-    private let comboTimeout: TimeInterval = 1.5
-    private let gameTimeLimit: TimeInterval = 60  // 60 second game
     var foodTarget: Int = 50
 
     // Physics
     private var duckVelocityY: CGFloat = 0
-    private let gravity: CGFloat = 0.4  // Faster gravity for better feel
-    private let jumpForce: CGFloat = -10  // Stronger jump force
-    private let duckWidth: CGFloat = 50
-    private let duckHeight: CGFloat = 50
+    private let gravity: CGFloat = GameConstants.Physics.gravity
+    private let jumpForce: CGFloat = GameConstants.Physics.jumpForce
+    private let duckWidth: CGFloat = GameConstants.Physics.duckWidth
+    private let duckHeight: CGFloat = GameConstants.Physics.duckHeight
 
     // Game constants
-    private let baseGameSpeed: CGFloat = 5
-    private let collisionRadius: CGFloat = 40
-    private let maxFoodOnScreen = 3
-    private let foodStartY: CGFloat = -30
-    private let foodEndSpacing: CGFloat = 50
+    private let baseGameSpeed: CGFloat = GameConstants.Gameplay.baseGameSpeed
+    private let collisionRadius: CGFloat = GameConstants.Gameplay.collisionRadius
+    private let maxFoodOnScreen = GameConstants.Gameplay.maxFoodOnScreen
+    private let foodStartY: CGFloat = GameConstants.Gameplay.foodStartY
+    private let foodEndSpacing: CGFloat = GameConstants.Gameplay.foodEdgeSpacing
+    private let gameTimeLimit: TimeInterval = GameConstants.Gameplay.gameTimeLimit
+    private let comboTimeout: TimeInterval = GameConstants.Gameplay.comboTimeout
 
     // Cached screen dimensions
     private let screenWidth = getScreenBounds().width
@@ -316,7 +316,7 @@ class GameManager: NSObject, ObservableObject {
         score = 0
         comboCount = 0
         gameTime = 0
-        duckPosition = CGPoint(x: screenWidth / 2, y: screenHeight - 150)  // Start near bottom
+        duckPosition = CGPoint(x: screenWidth / 2, y: screenHeight - GameConstants.Gameplay.duckStartOffsetY)
         duckVelocityY = 0
         foodItems.removeAll()
         gameActive = true
