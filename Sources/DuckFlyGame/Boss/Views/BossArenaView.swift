@@ -117,7 +117,7 @@ struct BossArenaView: View {
                         Text(round.bossName)
                             .font(.headline)
                             .foregroundColor(.white)
-                        Text("Round \(progressionManager.currentPhaseNumber)")
+                        Text("Round \(progressionManager.roundsCompleted + 1)")
                             .font(.caption)
                             .foregroundColor(.white.opacity(0.7))
                     }

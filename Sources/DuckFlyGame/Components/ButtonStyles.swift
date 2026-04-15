@@ -52,8 +52,7 @@ struct AttackButtonStyle: ButtonStyle {
             Text(icon)
                 .font(.system(size: 24))
             configuration.label
-                .font(.headline)
-                .fontWeight(.bold)
+                .font(.system(size: 18, weight: .bold))
             Spacer()
         }
         .frame(maxWidth: .infinity)

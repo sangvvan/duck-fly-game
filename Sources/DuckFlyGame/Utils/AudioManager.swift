@@ -70,7 +70,6 @@ class AudioManager {
 import UIKit
 
 private func AudioServicesPlaySystemSound(_ soundID: SystemSoundID) {
-    var soundID = soundID
     AudioServicesPlaySystemSound(soundID)
 }
 
