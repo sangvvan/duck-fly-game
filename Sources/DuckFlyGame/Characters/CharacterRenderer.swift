@@ -98,3 +98,4 @@ struct CharacterSelectionCard: View {
     .padding()
     .background(ColorTheme.skyGradient())
 }
+#endif

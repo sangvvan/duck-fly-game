@@ -140,3 +140,4 @@ struct MultiplayerGameOverView: View {
 
     return MultiplayerGameOverView(flowCoordinator: coordinator)
 }
+#endif

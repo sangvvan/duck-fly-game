@@ -124,3 +124,4 @@ struct TeamLineupView: View {
     coordinator.startGame()
     return TeamLobbyView(flowCoordinator: coordinator)
 }
+#endif

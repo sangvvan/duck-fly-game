@@ -88,3 +88,4 @@ class ParticleEmitter: ObservableObject {
         .padding()
     }
 }
+#endif

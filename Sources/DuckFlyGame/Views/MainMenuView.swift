@@ -66,3 +66,4 @@ struct MainMenuView: View {
 #Preview {
     MainMenuView(gameState: .constant(.mainMenu))
 }
+#endif

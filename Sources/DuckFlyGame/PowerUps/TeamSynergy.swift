@@ -104,3 +104,4 @@ struct TeamSynergyBonusView: View {
     .padding()
     .background(ColorTheme.skyGradient())
 }
+#endif

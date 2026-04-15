@@ -91,3 +91,4 @@ struct PowerUpIndicatorView: View {
         .padding()
         .background(ColorTheme.lightBackground)
 }
+#endif

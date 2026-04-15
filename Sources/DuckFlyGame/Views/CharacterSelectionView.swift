@@ -83,3 +83,4 @@ struct CharacterSelectionView: View {
     coordinator.selectedMode = .oneVsOne
     return CharacterSelectionView(flowCoordinator: coordinator)
 }
+#endif

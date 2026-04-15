@@ -104,3 +104,4 @@ class PointPopupManager: ObservableObject {
         }
     }
 }
+#endif

@@ -240,3 +240,4 @@ struct PowerUpFoodView: View {
     .padding()
     .background(ColorTheme.skyGradient())
 }
+#endif

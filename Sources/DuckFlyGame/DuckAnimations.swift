@@ -187,3 +187,4 @@ struct AnimatedDuckCharacter: View {
         .padding()
     }
 }
+#endif

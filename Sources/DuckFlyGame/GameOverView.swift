@@ -149,3 +149,4 @@ struct ScoreBreakdownRow: View {
 #Preview {
     GameOverView(score: 875, onPlayAgain: {})
 }
+#endif

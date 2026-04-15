@@ -92,3 +92,4 @@ struct MultiplayerGameView: View {
 
     return MultiplayerGameView(gameManager: gameManager)
 }
+#endif

@@ -237,3 +237,4 @@ struct FoodItemView: View {
         .padding()
     }
 }
+#endif

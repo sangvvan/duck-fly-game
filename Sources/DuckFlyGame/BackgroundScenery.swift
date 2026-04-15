@@ -118,3 +118,4 @@ struct BackgroundScenery: View {
         }
     }
 }
+#endif

@@ -192,3 +192,4 @@ struct ScoreCounterView: View {
         VictoryParadeView(winningTeam: team)
     }
 }
+#endif

@@ -114,3 +114,4 @@ struct PlayerZoneView: View {
         zoneMinX: 0
     )
 }
+#endif

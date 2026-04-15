@@ -147,3 +147,4 @@ struct LevelNodeView: View {
         gameState: .constant(.levelMap)
     )
 }
+#endif

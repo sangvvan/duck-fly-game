@@ -245,3 +245,4 @@ struct BossArenaView: View {
     manager.createBossState()
     return BossArenaView(progressionManager: manager, round: .amazon)
 }
+#endif

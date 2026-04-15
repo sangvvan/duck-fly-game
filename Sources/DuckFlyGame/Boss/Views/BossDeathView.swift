@@ -63,3 +63,4 @@ struct BossDeathView: View {
 #Preview {
     BossDeathView(progressionManager: RoundProgressionManager())
 }
+#endif

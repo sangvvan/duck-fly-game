@@ -20,3 +20,4 @@ struct MultiplayerHUDView: View {
     return MultiplayerHUDView(gameManager: gameManager)
         .background(ColorTheme.skyGradient())
 }
+#endif

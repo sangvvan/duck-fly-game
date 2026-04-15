@@ -94,3 +94,4 @@ struct DuckCharacter: View {
         .padding()
     }
 }
+#endif

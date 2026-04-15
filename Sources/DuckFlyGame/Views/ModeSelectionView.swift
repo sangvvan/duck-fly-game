@@ -100,3 +100,4 @@ struct ModeCard: View {
 #Preview {
     ModeSelectionView(flowCoordinator: MultiplayerFlowCoordinator())
 }
+#endif

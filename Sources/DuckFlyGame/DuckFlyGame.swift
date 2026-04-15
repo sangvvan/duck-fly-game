@@ -637,8 +637,6 @@ extension CGPoint {
 
 #if DEBUG && os(iOS)
 @available(iOS 17.0, *)
-#if DEBUG && os(iOS)
-@available(iOS 17.0, *)
 #Preview {
     ContentView()
 }
