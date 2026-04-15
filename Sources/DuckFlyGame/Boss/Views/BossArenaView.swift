@@ -55,9 +55,9 @@ struct BossArenaView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .contentShape(Rectangle())
-            .onTapGesture { location in
-                playerX = location.x
-                playerX = max(25, min(playerX, screenWidth - 25))
+            .onTapGesture {
+                // Simple tap - move to random position for now
+                playerX = CGFloat.random(in: 25...(screenWidth - 25))
             }
 
             // HUD Overlay

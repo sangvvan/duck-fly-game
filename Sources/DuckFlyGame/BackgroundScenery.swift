@@ -57,7 +57,7 @@ struct BackgroundScenery: View {
             CloudShape()
                 .fill(Color.white.opacity(0.25))
                 .frame(height: 80)
-                .offset(y: 100, x: offset2)
+                .offset(x: offset2, y: 100)
                 .ignoresSafeArea()
 
             // Front layer clouds (fastest)

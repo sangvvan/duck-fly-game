@@ -88,7 +88,7 @@ class RoundProgressionManager: ObservableObject {
         roundsCompleted += 1
         totalScore += foodBattlePoints * 10
 
-        if let cosmetic = DuckCosmetic.forRound(currentRound) {
+        if DuckCosmetic.forRound(currentRound) != nil {
             phase = .cosmeticUnlock
         } else {
             phase = .roundComplete

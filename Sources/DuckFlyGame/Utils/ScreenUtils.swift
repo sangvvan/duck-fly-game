@@ -10,7 +10,5 @@ func getScreenBounds() -> CGRect {
         }
     }
     // Fallback for earlier iOS versions (uses deprecated API but necessary for compatibility)
-    @available(*, deprecated: 26.0)
-    let fallback = UIScreen.main.bounds
-    return fallback
+    return UIScreen.main.bounds
 }

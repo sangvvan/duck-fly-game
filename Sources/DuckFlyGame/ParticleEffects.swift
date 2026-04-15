@@ -3,7 +3,7 @@ import SwiftUI
 /// Particle for burst effects
 struct Particle: Identifiable {
     let id = UUID()
-    let position: CGPoint
+    var position: CGPoint
     let velocity: CGVector
     let color: Color
     var opacity: Double = 1.0
